@@ -6,7 +6,6 @@
 	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 	<link rel="stylesheet" href="<?= BASE_URL ?>/assets/style.css">
-	<meta name="msapplication-TileColor" content="#ffffff">
 	<script src="<?= BASE_URL ?>/assets/jquery-3.7.1.min.js"></script>
 </head>
 <body>
