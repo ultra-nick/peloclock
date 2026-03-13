@@ -6,26 +6,26 @@ $cache = false;
 $ics = "";
 
 // get id and options
-if (isset($_GET['id'])) {
-	$id = $_GET['id'];
-	// get id details
-	$stmt = $pdo->prepare("SELECT instructors, fitness_disciplines, durations, languages, encore FROM calendars WHERE calendar_id = ?");
-	$stmt->execute([(int) $id]);
-	$row = $stmt->fetch();
-	if (!$row) {
-	    exit;
-	}
-	$instructors        = $row['instructors'];
-	$fitnessDisciplines = $row['fitness_disciplines'];
-	$durations          = $row['durations'];
-	$languages          = $row['languages'];
-	$encore             = $row['encore'];
-} else { // exit if id not set
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+if ($id < 1) {
 	exit;
 }
 
+// get id details
+$stmt = $pdo->prepare("SELECT instructors, fitness_disciplines, durations, languages, encore FROM calendars WHERE calendar_id = ?");
+$stmt->execute([$id]);
+$row = $stmt->fetch();
+if (!$row) {
+    exit;
+}
+$instructors        = $row['instructors'];
+$fitnessDisciplines = $row['fitness_disciplines'];
+$durations          = $row['durations'];
+$languages          = $row['languages'];
+$encore             = $row['encore'];
+
 // check for cache file
-if (file_exists(CACHE_PATH . '/' . (int) $id . '.ics')) {
+if (file_exists(CACHE_PATH . '/' . $id . '.ics')) {
     $cache = true;
 }
 
@@ -119,7 +119,7 @@ $ics .= "END:VCALENDAR";
 $ics = str_replace("\n", "\r\n", $ics);
 
 // create cache file
-file_put_contents(CACHE_PATH . '/' . (int) $id . '.ics', $ics);
+file_put_contents(CACHE_PATH . '/' . $id . '.ics', $ics);
 
 // output calendar
 echo $ics;
