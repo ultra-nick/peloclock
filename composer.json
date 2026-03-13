@@ -1,0 +1,21 @@
+{
+    "name": "ultra-nick/peloclock",
+    "description": "A self-hosted Peloton class calendar with subscribable iCal feeds.",
+    "type": "project",
+    "license": "MIT",
+    "keywords": ["peloton", "calendar", "ical", "self-hosted"],
+    "homepage": "https://github.com/ultra-nick/peloclock",
+    "authors": [
+        {
+            "name": "ultra-nick",
+            "homepage": "https://github.com/ultra-nick"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-pdo": "*",
+        "ultra-nick/peloton-auth": "^1.0"
+    },
+    "minimum-stability": "stable"
+}

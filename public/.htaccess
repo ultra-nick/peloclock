@@ -1,0 +1,4 @@
+RewriteEngine on
+
+# rewrite calendar.ics to calendar.php
+RewriteRule ^calendar.ics$ calendar.php [QSA]

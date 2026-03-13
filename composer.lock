@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f6204b82deb3340cf2ce6da0da1ae740",
+    "packages": [
+        {
+            "name": "ultra-nick/peloton-auth",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ultra-nick/peloton-auth.git",
+                "reference": "8eb48080ebb623f6ce9d8df2f64c0a2387706118"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ultra-nick/peloton-auth/zipball/8eb48080ebb623f6ce9d8df2f64c0a2387706118",
+                "reference": "8eb48080ebb623f6ce9d8df2f64c0a2387706118",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "PelotonAuth.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ultra-nick",
+                    "homepage": "https://github.com/ultra-nick"
+                }
+            ],
+            "description": "PHP class for automated Peloton OAuth token management - no authorised endpoint required.",
+            "homepage": "https://github.com/ultra-nick/peloton-auth",
+            "keywords": [
+                "api",
+                "auth",
+                "oauth",
+                "peloton",
+                "pkce"
+            ],
+            "support": {
+                "issues": "https://github.com/ultra-nick/peloton-auth/issues",
+                "source": "https://github.com/ultra-nick/peloton-auth/tree/v1.0.0"
+            },
+            "time": "2026-03-03T20:11:22+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-pdo": "*"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

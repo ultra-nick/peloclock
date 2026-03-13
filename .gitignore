@@ -1,0 +1,27 @@
+# Config file with real credentials
+config.php
+
+# Token storage
+peloton_tokens.json
+
+# Database (SQLite users)
+*.sqlite
+*.db
+
+# Composer
+/vendor/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Generated calendar cache
+/calendars/
+
+# Generated class data
+calendar.json
+
+# PelotonAuth (installed via Composer)
+PelotonAuth.php
