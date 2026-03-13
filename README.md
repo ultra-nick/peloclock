@@ -4,6 +4,8 @@ A self-hosted Peloton class calendar that generates subscribable iCal feeds. Sub
 
 Built for Peloton members who want their live class schedule in their personal calendar without relying on third-party services.
 
+You can see a live example at [peloclock.com](https://peloclock.com).
+
 ## Features
 
 - Subscribable `.ics` feeds you can add to any calendar app
