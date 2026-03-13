@@ -3,7 +3,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/peloclock_dark.png">
-    <img src="assets/peloclock_light.png" width="300" alt="peloclock">
+    <img src="assets/peloclock_light.png" width="500" alt="peloclock">
   </picture>
 </p>
 
