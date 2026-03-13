@@ -75,7 +75,7 @@ function dateToCal($timestamp) {
 $ics .= "BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-PRODID:-//pel//iCal 1.0//EN
+PRODID:-//peloclock//iCal 1.0//EN
 VERSION:2.0
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-APPLE-CALENDAR-COLOR:#000000
@@ -86,7 +86,7 @@ if ($results) {
    		$ics .= "BEGIN:VEVENT\n";	
 		$ics .= "TRANSP:TRANSPARENT\n";
 		$ics .= "LOCATION:" . mb_strtoupper($row['instructor_name']) . " · " . mb_strtoupper($row['fitness_discipline']) . "\n";
-		$ics .= "UID:" . $row['class_id'] . "@pel\n";
+		$ics .= "UID:" . $row['class_id'] . "@peloclock\n";
 		$ics .= "SUMMARY:" . mb_strtoupper($row['class_type']) . " · " . $row['title'] . "\n";
 		$ics .= "DTSTAMP:" .  dateToCal(time()) . "\n";
 		$ics .= "DTSTART:" . dateToCal($row['start_time']) . "\n";
