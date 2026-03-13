@@ -1,9 +1,11 @@
 # peloclock
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/peloclock_dark.png">
-  <img src="assets/peloclock_light.png" width="300" alt="peloclock">
-</picture>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/peloclock_dark.png">
+    <img src="assets/peloclock_light.png" alt="peloclock">
+  </picture>
+</p>
 
 A self-hosted Peloton class calendar that generates subscribable iCal feeds. Subscribe in Apple Calendar, Google Calendar, Outlook, or any iCal-compatible app and see upcoming Peloton live classes update automatically.
 
@@ -11,7 +13,11 @@ Built for Peloton members who want their live class schedule in their personal c
 
 You can see a live example at [peloclock.com](https://peloclock.com).
 
-<img src="assets/calendar.jpeg" width="300" alt="Calendar list view"> <img src="assets/details.jpeg" width="300" alt="Class detail view">
+<p align="center">
+  <img src="assets/calendar.jpeg" width="300" alt="Calendar list view">
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/details.jpeg" width="300" alt="Class detail view">
+</p>
 
 ## Features
 
