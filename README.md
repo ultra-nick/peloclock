@@ -15,7 +15,7 @@ You can see a live example at [peloclock.com](https://peloclock.com).
 
 <p align="center">
 &nbsp;<img src="assets/calendar.jpeg" width="300" alt="Calendar list view">
-&nbsp; ;&nbsp;
+&nbsp; &nbsp;
 <img src="assets/details.jpeg" width="300" alt="Class detail view">&nbsp;
 </p>
 
