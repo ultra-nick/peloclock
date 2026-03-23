@@ -3,7 +3,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/peloclock_dark.png">
-    <img src="assets/peloclock_light.png" width="500" alt="peloclock">
+    <img src="assets/peloclock_light.png" alt="peloclock">
   </picture>
 </p>
 
@@ -14,7 +14,9 @@ Built for Peloton members who want their live class schedule in their personal c
 You can see a live example at [peloclock.com](https://peloclock.com).
 
 <p align="center">
-<img src="assets/calendar.jpeg" width="300" alt="Calendar list view"> <img src="assets/details.jpeg" width="300" alt="Class detail view">
+  <img src="assets/calendar.jpeg" width="300" alt="Calendar list view">
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/details.jpeg" width="300" alt="Class detail view">
 </p>
 
 ## Features
@@ -52,11 +54,32 @@ composer install
 
 The `public/` folder is the web root. Everything outside it - including your credentials, the database, and the calendar cache - is kept private.
 
-A typical Nginx config:
+Calendar feeds are served as `.ics` URLs and rewritten internally to `calendar.php`. You'll need a rewrite rule in your web server config.
+
+**Nginx:**
 
 ```nginx
-root /path/to/peloclock/public;
-index index.php;
+server {
+    root /path/to/peloclock/public;
+    index index.php;
+
+    location = /calendar.ics {
+        rewrite ^ /calendar.php last;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.x-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+```
+
+**Apache** - add to `.htaccess` in `public/` or your virtual host config:
+
+```apache
+RewriteEngine on
+RewriteRule ^calendar.ics$ calendar.php [QSA]
 ```
 
 **4. Create the `calendars/` directory**
@@ -133,9 +156,13 @@ launchctl load ~/Library/LaunchAgents/com.peloclock.sync.plist
 
 ## Subscribing to a calendar
 
-Once the sync has run, calendar feed URLs are available via `public/index.php`. Add a feed URL in your calendar app under "New calendar subscription" or equivalent.
+Once the sync has run, visit `index.php` in your browser to see your available calendar feeds. Each feed has a URL in the format:
 
-Feeds refresh according to your calendar app's subscription interval. Most apps check every few hours by default.
+```
+https://yourdomain.com/calendar.ics?id=123
+```
+
+Copy the URL and add it to your calendar app under "New calendar subscription" or equivalent. Feeds refresh according to your calendar app's subscription interval - most apps check every few hours by default.
 
 ## Authentication
 

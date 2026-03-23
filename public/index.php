@@ -66,7 +66,7 @@ if (!empty($selectedInstructorIds) && !empty($selectedFitnessDisciplines) && !em
 	if ($result) {
 	    $calendarId = $pdo->lastInsertId();
 	    $host = $_SERVER['HTTP_HOST'];
-	    $calendarUrl = "webcal://" . $host . BASE_URL . "/calendar.php?id=" . $calendarId;
+	    $calendarUrl = "webcal://" . $host . BASE_URL . "/calendar.ics?id=" . $calendarId;
 	}
 }
 require PRIVATE_PATH . '/header.php';
