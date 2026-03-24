@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /calendar.ics
+Disallow: /calendar.php
+Disallow: /setup.php
+
+User-agent: ia_archiver
+Disallow: /
