@@ -18,7 +18,8 @@ peloton_tokens.json
 *.log
 
 # Generated calendar cache
-/calendars/
+/calendars/*
+!/calendars/.gitkeep
 
 # Generated class data
 calendar.json
